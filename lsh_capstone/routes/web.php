@@ -69,6 +69,8 @@ Route::get('/room', [RoomController::class, 'index'])->name('room');
 
 Route::get('/accommodations', [AccommodationController::class, 'index'])->name('accommodation');
 
+Route::get('/accommodation/hotel', [AccommodationController::class, 'hotel'])->name('accommodation_hotel');
+
 Route::get('/room/{id}', [RoomController::class, 'single_room'])->name('room_detail');
 
 Route::post('/booking/submit', [BookingController::class, 'cart_submit'])->name('cart_submit');

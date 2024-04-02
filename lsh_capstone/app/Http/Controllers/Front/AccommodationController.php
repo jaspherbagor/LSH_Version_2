@@ -14,7 +14,7 @@ class AccommodationController extends Controller
 
     public function hotel()
     {
-
+        return view('front.accommodation_hotel');
     }
 
     public function boarding_house()
@@ -24,6 +24,6 @@ class AccommodationController extends Controller
 
     public function apartment()
     {
-                
+
     }
 }
