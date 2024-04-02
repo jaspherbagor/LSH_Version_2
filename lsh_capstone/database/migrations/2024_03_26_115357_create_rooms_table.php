@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
+            $table->text('accommodation_type');
+            $table->text('accommodation_name');
+            $table->text('room_name');
             $table->text('description');
             $table->text('price');
             $table->text('total_rooms');

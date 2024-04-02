@@ -38,18 +38,23 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Accommodation Name *</label>
-                                    <input type="text" class="form-control" name="accommodation_name" value={{ $room_data->accommodation_name }}>
+                                    <input type="text" class="form-control" name="accommodation_name" value="{{ $room_data->accommodation_name }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Room *</label>
-                                    <input type="text" class="form-control" name="name" value={{ $room_data->name }}>
+                                    <label class="form-label">Room Name *</label>
+                                    <input type="text" class="form-control" name="room_name" value="{{ $room_data->room_name }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Description *</label>
                                     <textarea name="description" class="form-control snote" cols="30" rows="10">{{ $room_data->description }}</textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Price *</label>
+                                    @if($room_data->accommodation_type == 'Hotel')
+                                    <label class="form-label">Price (per night) *</label>
+                                    @else
+                                    <label class="form-label">Price (per month) *</label>
+                                    @endif
+
                                     <input type="text" class="form-control" name="price" value="{{ $room_data->price }}">
                                 </div>
                                 <div class="mb-4">
