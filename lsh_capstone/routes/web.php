@@ -23,6 +23,7 @@ use App\Http\Controllers\Customer\CustomerHomeController;
 use App\Http\Controllers\Customer\CustomerOrderController;
 use App\Http\Controllers\Customer\CustomerProfileController;
 use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\AccommodationController;
 use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Front\BookingController;
 use App\Http\Controllers\Front\ContactController;
@@ -65,6 +66,8 @@ Route::post('/subscriber/send-email', [SubscriberController::class, 'send_email'
 Route::get('/subscriber/verify/{email}/{token}', [SubscriberController::class, 'verify'])->name('subscriber_verify');
 
 Route::get('/room', [RoomController::class, 'index'])->name('room');
+
+Route::get('/accommodations', [AccommodationController::class, 'index'])->name('accommodation');
 
 Route::get('/room/{id}', [RoomController::class, 'single_room'])->name('room_detail');
 
