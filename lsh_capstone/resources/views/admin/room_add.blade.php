@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Add Room')
+@section('heading', 'Add Accommodation')
 
 @section('right_top_button')
 <a href="{{ route('admin_room_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
@@ -23,7 +23,21 @@
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Name *</label>
+                                    <label for="accommodation_type" class="form-label">Accommodation Type *</label>
+                                    <select class="form-control" id="sel1" name="accommodation_type">
+                                        <option>Select type</option>
+                                        <option value="Hotel">Hotel</option>
+                                        <option value="Apartment">Apartment</option>
+                                        <option value="Boarding House">Boarding House</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label">Accommodation Name *</label>
+                                    <input type="text" class="form-control" name="accommodation_name" value={{ old('accommodation_name') }}>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Room *</label>
                                     <input type="text" class="form-control" name="name" value={{ old('name') }}>
                                 </div>
                                 <div class="mb-4">

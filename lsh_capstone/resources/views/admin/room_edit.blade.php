@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Edit Room')
+@section('heading', 'Edit Accommodation')
 
 @section('right_top_button')
 <a href="{{ route('admin_room_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
@@ -29,8 +29,20 @@
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Name *</label>
-                                    <input type="text" class="form-control" name="name" value="{{ $room_data->name }}">
+                                    <label class="form-label">Accommodation Type</label>
+                                    <select name="contact_status" class="form-control">
+                                        <option value="Hotel" @if($room_data->contact_status === 'Hotel') selected @endif>Hotel</option>
+                                        <option value="Apartment" @if($room_data->contact_status === 'Apartment') selected @endif>Apartment</option>
+                                        <option value="Boarding House" @if($room_data->contact_status === 'Boarding House') selected @endif>Boarding House</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Accommodation Name *</label>
+                                    <input type="text" class="form-control" name="accommodation_name" value={{ $room_data->accommodation_name }}>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Room *</label>
+                                    <input type="text" class="form-control" name="name" value={{ $room_data->name }}>
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Description *</label>
