@@ -30,10 +30,10 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Accommodation Type</label>
-                                    <select name="contact_status" class="form-control">
-                                        <option value="Hotel" @if($room_data->contact_status === 'Hotel') selected @endif>Hotel</option>
-                                        <option value="Apartment" @if($room_data->contact_status === 'Apartment') selected @endif>Apartment</option>
-                                        <option value="Boarding House" @if($room_data->contact_status === 'Boarding House') selected @endif>Boarding House</option>
+                                    <select name="accommodation_type" class="form-control">
+                                        <option value="Hotel" @if($room_data->accommodation_type === 'Hotel') selected @endif>Hotel</option>
+                                        <option value="Apartment" @if($room_data->accommodation_type === 'Apartment') selected @endif>Apartment</option>
+                                        <option value="Boarding House" @if($room_data->accommodation_type === 'Boarding House') selected @endif>Boarding House</option>
                                     </select>
                                 </div>
                                 <div class="mb-4">
