@@ -164,13 +164,17 @@
                                     <a href="javascript:void;" class="nav-link dropdown-toggle">Accommodations</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="{{ route('room') }}" class="nav-link">All Accommodations</a>
+                                            <a href="{{ route('accommodation') }}" class="nav-link">All Accommodations</a>
                                         </li>
-                                        @foreach($global_room_data as $item)
                                         <li class="nav-item">
-                                            <a href="{{ route('room_detail', $item->id) }}" class="nav-link">{{ $item->name }}</a>
+                                            <a href="{{ route('accommodation_hotel') }}" class="nav-link">Hotel</a>
                                         </li>
-                                        @endforeach
+                                        <li class="nav-item">
+                                            <a href="{{ route('accommodation_apartment') }}" class="nav-link">Apartment</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('accommodation_boarding_house') }}" class="nav-link">Boarding House</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
