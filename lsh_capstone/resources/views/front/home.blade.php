@@ -154,7 +154,7 @@
                             <h4>{{ $item->name }}</h4>
                             <p>{{ $item->designation }}</p>
                         </div>
-                        <div class="description">
+                        <div class="description px-md-5 px-1">
                             <p>
                                 {!! $item->comment !!} 
                             </p>
