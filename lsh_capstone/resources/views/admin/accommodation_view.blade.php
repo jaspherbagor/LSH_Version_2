@@ -32,7 +32,7 @@
                                         <td>{{ $row->address }}</td>
                                         <td class="pt_10 pb_10">
                                             <a href="{{ route('admin_accommodation_edit',$row->id) }}" class="btn btn-primary">Edit</a>
-                                            <a href="{{ route('admin_accommodation_add',$row->id) }}" class="btn btn-success">See Rooms</a>
+                                            <a href="{{ route('admin_room_view',$row->id) }}" class="btn btn-success">See Rooms</a>
                                             <a href="{{ route('admin_accommodation_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete {{ $row->name }}?');">Delete</a>
                                         </td>
                                         

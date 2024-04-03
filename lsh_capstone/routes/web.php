@@ -386,11 +386,11 @@ Route::group(['middleware' => ['admin:admin']], function() {
     
     
     
-    Route::get('/admin/room/view', [AdminRoomController::class, 'index'])->name('admin_room_view');
+    Route::get('/admin/room/view/{accom_id}', [AdminRoomController::class, 'index'])->name('admin_room_view');
     
-    Route::get('/admin/room/add', [AdminRoomController::class, 'add'])->name('admin_room_add');
+    Route::get('/admin/room/add/{accom_id}', [AdminRoomController::class, 'add'])->name('admin_room_add');
     
-    Route::post('/admin/room/store', [AdminRoomController::class, 'store'])->name('admin_room_store');
+    Route::post('/admin/room/store/{accom_id}', [AdminRoomController::class, 'store'])->name('admin_room_store');
     
     Route::get('/admin/room/edit/{id}', [AdminRoomController::class, 'edit'])->name('admin_room_edit');
     
