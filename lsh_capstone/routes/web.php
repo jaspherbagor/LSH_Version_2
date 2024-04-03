@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAccommodationTypeController;
 use App\Http\Controllers\Admin\AdminAmenityController;
 use App\Http\Controllers\Admin\AdminCustomerController;
 use App\Http\Controllers\Admin\AdminDatewiseRoomController;
@@ -180,6 +181,20 @@ Route::group(['middleware' => ['admin:admin']], function() {
     Route::post('/admin/slide/update/{id}', [AdminSlideController::class, 'update'])->name('admin_slide_update');
     
     Route::get('/admin/slide/delete/{id}', [AdminSlideController::class, 'delete'])->name('admin_slide_delete');
+
+
+
+    Route::get('/admin/accommodation-type/view', [AdminAccommodationTypeController::class, 'index'])->name('admin_accommodation_type_view');
+    
+    Route::get('/admin/accommodation-type/add', [AdminAccommodationTypeController::class, 'add'])->name('admin_accommodation_type_add');
+    
+    Route::post('/admin/accommodation-type/store', [AdminAccommodationTypeController::class, 'store'])->name('admin_accommodation_type_store');
+    
+    Route::get('/admin/accommodation-type/edit/{id}', [AdminAccommodationTypeController::class, 'edit'])->name('admin_accommodation_type_edit');
+    
+    Route::post('/admin/accommodation-type/update/{id}', [AdminAccommodationTypeController::class, 'update'])->name('admin_accommodation_type_update');
+    
+    Route::get('/admin/accommodation-type/delete/{id}', [AdminAccommodationTypeController::class, 'delete'])->name('admin_accommodation_type_delete');
     
     
     
