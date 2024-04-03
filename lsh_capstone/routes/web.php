@@ -203,7 +203,7 @@ Route::group(['middleware' => ['admin:admin']], function() {
     
     Route::get('/admin/accommodation/add/{accomtype_id}', [AdminAccommodationController::class, 'add'])->name('admin_accommodation_add');
     
-    Route::post('/admin/accommodation/store', [AdminAccommodationController::class, 'store'])->name('admin_accommodation_store');
+    Route::post('/admin/accommodation/store/{accomtype_id}', [AdminAccommodationController::class, 'store'])->name('admin_accommodation_store');
     
     Route::get('/admin/accommodation/edit/{id}', [AdminAccommodationController::class, 'edit'])->name('admin_accommodation_edit');
     

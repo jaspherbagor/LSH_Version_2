@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'View Accommodations')
+@section('heading', 'View Accommodation Types')
 
 @section('right_top_button')
 <a href="{{ route('admin_accommodation_type_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>

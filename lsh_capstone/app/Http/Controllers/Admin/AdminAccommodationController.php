@@ -22,14 +22,13 @@ class AdminAccommodationController extends Controller
         return view('admin.accommodation_add', compact('accommodation_type'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $accomtype_id)
     {
         $request->validate([
             'photo' => 'required|image|mimes:jpg,jpeg,png,svg,webp,gif|max:5120',
-            'name' => 'required'
-        ]);
-
-        
+            'name' => 'required',
+            'address' =>'required'
+        ]); 
 
         $ext = $request->file('photo')->extension();
         $final_name = time().'.'.$ext;
@@ -37,11 +36,16 @@ class AdminAccommodationController extends Controller
         $request->file('photo')->move(public_path('uploads/'),$final_name);
 
         $obj = new Accommodation();
-        $obj->photo = $final_name;
+        $obj->accommodation_type_id = $accomtype_id;
         $obj->name = $request->name;
+        $obj->photo = $final_name;
+        $obj->address = $request->address;
+        $obj->contact_number = $request->contact_number;
+        $obj->contact_email = $request->contact_email;
+        $obj->map = $request->map;
         $obj->save();
 
-        return redirect()->back()->with('success', 'Accommodation type is added successfully!');
+        return redirect()->back()->with('success', 'Accommodation is added successfully!');
     }
 
     public function edit($id)
