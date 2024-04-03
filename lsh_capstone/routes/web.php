@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAccommodationController;
 use App\Http\Controllers\Admin\AdminAccommodationTypeController;
 use App\Http\Controllers\Admin\AdminAmenityController;
 use App\Http\Controllers\Admin\AdminCustomerController;
@@ -195,6 +196,20 @@ Route::group(['middleware' => ['admin:admin']], function() {
     Route::post('/admin/accommodation-type/update/{id}', [AdminAccommodationTypeController::class, 'update'])->name('admin_accommodation_type_update');
     
     Route::get('/admin/accommodation-type/delete/{id}', [AdminAccommodationTypeController::class, 'delete'])->name('admin_accommodation_type_delete');
+
+
+
+    Route::get('/admin/accommodation/view/{accomtype_id}', [AdminAccommodationController::class, 'index'])->name('admin_accommodation_view');
+    
+    Route::get('/admin/accommodation/add/{accomtype_id}', [AdminAccommodationController::class, 'add'])->name('admin_accommodation_add');
+    
+    Route::post('/admin/accommodation/store', [AdminAccommodationController::class, 'store'])->name('admin_accommodation_store');
+    
+    Route::get('/admin/accommodation/edit/{id}', [AdminAccommodationController::class, 'edit'])->name('admin_accommodation_edit');
+    
+    Route::post('/admin/accommodation/update/{id}', [AdminAccommodationController::class, 'update'])->name('admin_accommodation_update');
+    
+    Route::get('/admin/accommodation/delete/{id}', [AdminAccommodationController::class, 'delete'])->name('admin_accommodation_delete');
     
     
     

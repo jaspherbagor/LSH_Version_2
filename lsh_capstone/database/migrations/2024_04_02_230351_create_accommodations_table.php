@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('accommodation_type_id');
             $table->string('name'); // Name of the accommodation (e.g., Bayangan Hotel, Casie Hotel)
+            $table->text('photo');
             $table->text('address');
             $table->text('contact_detail')->nullable();
             $table->text('map')->nullable();

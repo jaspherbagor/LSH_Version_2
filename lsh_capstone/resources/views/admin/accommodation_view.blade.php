@@ -1,10 +1,11 @@
 @extends('admin.layout.app')
 
-@section('heading', 'View Accommodations')
+@section('heading', $accommodation_type->name)
 
 @section('right_top_button')
-<a href="{{ route('admin_accommodation_type_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+<a href="{{ route('admin_accommodation_add', $accommodation_type->id) }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
 @endsection
+
 @section('main_content')
     <div class="section-body">
         <div class="row">
@@ -18,19 +19,21 @@
                                         <th>SL</th>
                                         <th>Name</th>
                                         <th>Photo</th>
+                                        <th>Address</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($accommodation_types as $row)
+                                    @foreach($accommodations as $row)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $row->name }}</td>
                                         <td><img src="{{ asset('uploads/'.$row->photo) }}" alt="accommodation_type_image" class="w_200"></td>
+                                        <td>{{ $row->address }}</td>
                                         <td class="pt_10 pb_10">
-                                            <a href="{{ route('admin_accommodation_type_edit',$row->id) }}" class="btn btn-primary">Edit</a>
-                                            <a href="{{ route('admin_accommodation_view',$row->id) }}" class="btn btn-primary">View</a>
-                                            <a href="{{ route('admin_accommodation_type_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
+                                            <a href="{{ route('admin_accommodation_edit',$row->id) }}" class="btn btn-primary">Edit</a>
+                                            <a href="{{ route('admin_accommodation_add',$row->id) }}" class="btn btn-primary">Add Rooms</a>
+                                            <a href="{{ route('admin_accommodation_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
                                         </td>
                                         
                                     </tr>
