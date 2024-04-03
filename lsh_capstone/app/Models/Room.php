@@ -9,7 +9,7 @@ class Room extends Model
 {
     use HasFactory;
     
-    public function rRoomPhoto()
+    public function RoomPhotos()
     {
         return $this->hasMany(RoomPhoto::class);
     }

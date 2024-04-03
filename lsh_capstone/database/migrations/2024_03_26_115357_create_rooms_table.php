@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
+        
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
-            $table->text('accommodation_type');
-            $table->text('accommodation_name');
+            $table->unsignedBigInteger('accommodation_id'); // Foreign key for accommodation
             $table->text('room_name');
             $table->text('description');
             $table->text('price');
@@ -30,6 +30,9 @@ return new class extends Migration
             $table->text('featured_photo');
             $table->text('video_id')->nullable();
             $table->timestamps();
+            
+            // Define foreign key constraint
+            $table->foreign('accommodation_id')->references('id')->on('accommodations')->onDelete('cascade');
         });
     }
 
