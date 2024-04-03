@@ -17,8 +17,8 @@
                                     <tr>
                                         <th>SL</th>
                                         <th>Photo</th>
-                                        <th>Accommodation Type</th>
                                         <th>Accommodation Name</th>
+                                        <th>Accommodation</th>
                                         <th>Room</th>
                                         <th>Price</th>
                                         <th>Action</th>
