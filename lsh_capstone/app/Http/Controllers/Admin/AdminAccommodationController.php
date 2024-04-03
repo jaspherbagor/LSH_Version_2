@@ -75,6 +75,10 @@ class AdminAccommodationController extends Controller
         }
 
         $obj->name = $request->name;
+        $obj->address = $request->address;
+        $obj->contact_number = $request->contact_number;
+        $obj->contact_email = $request->contact_email;
+        $obj->map = $request->map;
         $obj->update();
 
         return redirect()->back()->with('success', 'Accommodation type is updated successfully!');

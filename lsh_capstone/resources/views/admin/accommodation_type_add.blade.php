@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Name *</label>
-                                    <input type="text" class="form-control" name="name" value={{ old('name') }}>
+                                    <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>

@@ -24,19 +24,19 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Name *</label>
-                                    <input type="text" class="form-control" name="name" value={{ old('name') }}>
+                                    <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Address *</label>
-                                    <input type="text" class="form-control" name="address" value={{ old('address') }}>
+                                    <input type="text" class="form-control" name="address" value="{{ old('address') }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Contact Number</label>
-                                    <input type="text" class="form-control" name="contact_number" value={{ old('contact_number') }}>
+                                    <input type="text" class="form-control" name="contact_number" value="{{ old('contact_number') }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Contact Email</label>
-                                    <input type="text" class="form-control" name="contact_email" value={{ old('contact_email') }}>
+                                    <input type="text" class="form-control" name="contact_email" value="{{ old('contact_email') }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Map Iframe Code</label>
