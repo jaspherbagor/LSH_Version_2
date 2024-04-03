@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'View Accommodations')
+@section('heading', $accommodation->name.' Rooms')
 
 @section('right_top_button')
-<a href="{{ route('admin_room_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+<a href="{{ route('admin_room_add', $accommodation->id) }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
 @endsection
 @section('main_content')
     <div class="section-body">
@@ -18,7 +18,6 @@
                                         <th>SL</th>
                                         <th>Photo</th>
                                         <th>Accommodation Name</th>
-                                        <th>Accommodation</th>
                                         <th>Room</th>
                                         <th>Price</th>
                                         <th>Action</th>
@@ -31,8 +30,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td><img src="{{ asset('uploads/'.$row->featured_photo) }}" alt="slide_image" class="w_200"></td>
-                                        <td>Hotel</td>
-                                        <td>Bayangan Hotel</td>
+                                        <td>{{ $accommodation->name }}</td>
                                         <td>{{ $row->name }}</td>
                                         <td>₱{{ $row->price }}/night</td>
                                         <td class="pt_10 pb_10">

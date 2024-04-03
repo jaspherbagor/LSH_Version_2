@@ -29,18 +29,6 @@
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Accommodation Type</label>
-                                    <select name="accommodation_type" class="form-control">
-                                        <option value="Hotel" @if($room_data->accommodation_type === 'Hotel') selected @endif>Hotel</option>
-                                        <option value="Apartment" @if($room_data->accommodation_type === 'Apartment') selected @endif>Apartment</option>
-                                        <option value="Boarding House" @if($room_data->accommodation_type === 'Boarding House') selected @endif>Boarding House</option>
-                                    </select>
-                                </div>
-                                <div class="mb-4">
-                                    <label class="form-label">Accommodation Name *</label>
-                                    <input type="text" class="form-control" name="accommodation_name" value="{{ $room_data->accommodation_name }}">
-                                </div>
-                                <div class="mb-4">
                                     <label class="form-label">Room Name *</label>
                                     <input type="text" class="form-control" name="room_name" value="{{ $room_data->room_name }}">
                                 </div>
@@ -48,13 +36,8 @@
                                     <label class="form-label">Description *</label>
                                     <textarea name="description" class="form-control snote" cols="30" rows="10">{{ $room_data->description }}</textarea>
                                 </div>
-                                <div class="mb-4">
-                                    @if($room_data->accommodation_type == 'Hotel')
-                                    <label class="form-label">Price (per night) *</label>
-                                    @else
-                                    <label class="form-label">Price (per month) *</label>
-                                    @endif
-
+                                <div class="mb-4">                                    
+                                    <label class="form-label">Price *</label>
                                     <input type="text" class="form-control" name="price" value="{{ $room_data->price }}">
                                 </div>
                                 <div class="mb-4">

@@ -23,7 +23,7 @@
                 <ul class="dropdown-menu">
                     <li class="{{ Request::is('admin/amenity/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_amenity_view') }}"><i class="fa fa-angle-right"></i>Amenities</a></li>
                     <li class="{{ Request::is('admin/accommodation-type/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_accommodation_type_view') }}"><i class="fa fa-angle-right"></i>Accommodation Type</a></li>
-                    <li class="{{ Request::is('admin/room/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_room_view') }}"><i class="fa fa-angle-right"></i>Accommodations</a></li>
+                    {{-- <li class="{{ Request::is('admin/room/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_room_view, ') }}"><i class="fa fa-angle-right"></i>Accommodations</a></li> --}}
                 </ul>
             </li>
 

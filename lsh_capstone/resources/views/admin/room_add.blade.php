@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Add Accommodation')
+@section('heading', 'Add '.$accommodation->name.' Room')
 
 @section('right_top_button')
-<a href="{{ route('admin_room_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
+<a href="{{ route('admin_room_view', $accommodation->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
 @endsection
 
 @section('main_content')
@@ -12,7 +12,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin_room_store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('admin_room_store', $accommodation->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-12">
@@ -23,20 +23,6 @@
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="accommodation_type" class="form-label">Accommodation Type *</label>
-                                    <select class="form-control" id="sel1" name="accommodation_type">
-                                        <option>Select type</option>
-                                        <option value="Hotel">Hotel</option>
-                                        <option value="Apartment">Apartment</option>
-                                        <option value="Boarding House">Boarding House</option>
-                                    </select>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="form-label">Accommodation Name *</label>
-                                    <input type="text" class="form-control" name="accommodation_name" value={{ old('accommodation_name') }}>
-                                </div>
-                                <div class="mb-4">
                                     <label class="form-label">Room *</label>
                                     <input type="text" class="form-control" name="name" value={{ old('name') }}>
                                 </div>
@@ -45,7 +31,11 @@
                                     <textarea name="description" class="form-control h_100 snote"  cols="30" rows="10">{{ old('description') }}</textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Price *</label>
+                                    @if($accommodation_type->name !== 'Hotel')
+                                    <label class="form-label">Price (per month) *</label>
+                                    @else
+                                    <label class="form-label">Price (per month) *</label>
+                                    @endif
                                     <input type="text" class="form-control" name="price" value={{ old('price') }}>
                                 </div>
                                 <div class="mb-4">

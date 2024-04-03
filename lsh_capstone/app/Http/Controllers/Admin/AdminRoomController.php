@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Accommodation;
+use App\Models\AccommodationType;
 use App\Models\Amenity;
 use App\Models\Room;
 use App\Models\RoomPhoto;
@@ -10,19 +12,22 @@ use Illuminate\Http\Request;
 
 class AdminRoomController extends Controller
 {
-    public function index()
+    public function index($accom_id)
     {
-        $rooms = Room::get();
-        return view('admin.room_view', compact('rooms'));
+        $accommodation = Accommodation::where('id', $accom_id)->first();
+        $rooms = Room::where('accommodation_id', $accom_id)->get();
+        return view('admin.room_view', compact('rooms', 'accommodation'));
     }
 
-    public function add()
+    public function add($accom_id)
     {
+        $accommodation = Accommodation::where('id', $accom_id)->first();
+        $accommodation_type = AccommodationType::where('id', $accommodation->accommodation_type_id)->first();
         $all_amenities = Amenity::get();
-        return view('admin.room_add',compact('all_amenities'));
+        return view('admin.room_add',compact('all_amenities', 'accommodation', 'accommodation_type'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $accom_id)
     {
         $amenities = '';
         $i=0;
@@ -50,6 +55,7 @@ class AdminRoomController extends Controller
         $request->file('featured_photo')->move(public_path('uploads/'),$final_name);
 
         $obj = new Room();
+        $obj->accommodation_id = $accom_id;
         $obj->featured_photo = $final_name;
         $obj->name = $request->name;
         $obj->description = $request->description;
