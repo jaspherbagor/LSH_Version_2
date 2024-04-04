@@ -122,7 +122,7 @@
 @if($global_setting_data->home_room_status == 'Show')
 <div class="home-rooms">
     <div class="container">
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-md-12">
                 <h2 class="main-header">Featured Accommodation Rooms</h2>
             </div>
@@ -137,7 +137,7 @@
                     </div>
                     <div class="text">
                         <h2>
-                            <a href="{{ route('room_detail',$item->id) }}">{{ $item->name }}</a>
+                            <a href="{{ route('room_detail',$item->id) }}">{{ $item->room_name }}</a>
                         </h2>
                         <div class="price">
                             ₱{{ $item->price }} per night
@@ -153,7 +153,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="big-button">
-                    <a href="{{ route('room') }}" class="btn btn-primary">See All Rooms</a>
+                    <a href="{{ route('accommodation_types') }}" class="btn btn-primary">See Accommodation Types</a>
                 </div>
             </div>
         </div>

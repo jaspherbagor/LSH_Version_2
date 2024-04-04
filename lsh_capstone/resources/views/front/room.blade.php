@@ -21,6 +21,7 @@
     <div class="row">
         <div class="col-md-6 d-flex align-items-center justify-content-start">
             <div>
+                <h3 class="fw-bold mb-4">Contact Information</h3>
                 <p><span class="fw-bold">Name:</span> {{ $accommodation->name }}</p>
                 <p><span class="fw-bold">Contact Number:</span> {{ $accommodation->contact_number }}</p>
                 <p><span class="fw-bold">Contact Email:</span> {{ $accommodation->contact_email }}</p>
