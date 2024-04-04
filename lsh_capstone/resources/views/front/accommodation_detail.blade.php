@@ -24,7 +24,7 @@
                     <div class="text">
                         <h2><a href="{{ route('room_detail',$item->id) }}">{{ $item->name }}</a></h2>
                         <div class="button">
-                            <a href="{{ route('room_detail',$item->id) }}" class="btn btn-primary">See Rooms</a>
+                            <a href="{{ route('room_detail',$item->id) }}" class="btn btn-primary">See Detail</a>
                         </div>
                     </div>
                 </div>
