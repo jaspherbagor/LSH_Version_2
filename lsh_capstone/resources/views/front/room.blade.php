@@ -6,8 +6,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>{{ $global_page_data->room_heading }}</h2>
+                <h2>{{ $accommodation->name }}</h2>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+
         </div>
     </div>
 </div>
@@ -22,9 +30,14 @@
                         <img src="{{ asset('uploads/'.$item->featured_photo) }}" alt="">
                     </div>
                     <div class="text">
-                        <h2><a href="{{ route('room_detail',$item->id) }}">{{ $item->name }}</a></h2>
+                        <h2><a href="{{ route('room_detail',$item->id) }}">{{ $item->room_name }}</a></h2>
                         <div class="price">
+                            @if($accommodation_type->name !== 'Hotel')
+                            ₱{{ $item->price }}/month
+                            @else
                             ₱{{ $item->price }}/night
+                            @endif
+
                         </div>
                         <div class="button">
                             <a href="{{ route('room_detail',$item->id) }}" class="btn btn-primary">See Detail</a>

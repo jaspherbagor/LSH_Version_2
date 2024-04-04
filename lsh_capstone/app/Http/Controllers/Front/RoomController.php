@@ -3,15 +3,19 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Accommodation;
+use App\Models\AccommodationType;
 use App\Models\Room;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
-    public function index()
+    public function index($accomm_id)
     {
-        $room_all = Room::paginate(12);
-        return view('front.room', compact('room_all'));
+        $accommodation = Accommodation::where('id', $accomm_id)->first();
+        $accommodation_type = AccommodationType::where('id', $accommodation->accommodation_type_id)->first();
+        $room_all = Room::where('accommodation_id', $accomm_id)->paginate(12);
+        return view('front.room', compact('room_all', 'accommodation', 'accommodation_type'));
     }
 
     public function single_room($id)

@@ -44,7 +44,7 @@ class AdminRoomController extends Controller
 
         $request->validate([
             'featured_photo' => 'required|image|mimes:jpg,jpeg,png,gif',
-            'name' => 'required',
+            'room_name' => 'required',
             'description' => 'required',
             'price' => 'required',
             'total_rooms' => 'required'
@@ -57,7 +57,7 @@ class AdminRoomController extends Controller
         $obj = new Room();
         $obj->accommodation_id = $accom_id;
         $obj->featured_photo = $final_name;
-        $obj->name = $request->name;
+        $obj->room_name = $request->room_name;
         $obj->description = $request->description;
         $obj->price = $request->price;
         $obj->total_rooms = $request->total_rooms;
@@ -103,12 +103,12 @@ class AdminRoomController extends Controller
             }
         }
 
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'price' => 'required',
-            'total_rooms' => 'required'
-        ]);
+        // $request->validate([
+        //     'name' => 'required',
+        //     'description' => 'required',
+        //     'price' => 'required',
+        //     'total_rooms' => 'required'
+        // ]);
 
         if($request->hasFile('featured_photo')) {
             $request->validate([
@@ -121,7 +121,7 @@ class AdminRoomController extends Controller
             $obj->featured_photo = $final_name;
         }
 
-        $obj->name = $request->name;
+        $obj->room_name = $request->room_name;
         $obj->description = $request->description;
         $obj->price = $request->price;
         $obj->total_rooms = $request->total_rooms;

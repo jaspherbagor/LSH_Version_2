@@ -67,14 +67,13 @@ Route::post('/subscriber/send-email', [SubscriberController::class, 'send_email'
 
 Route::get('/subscriber/verify/{email}/{token}', [SubscriberController::class, 'verify'])->name('subscriber_verify');
 
-Route::get('/room', [RoomController::class, 'index'])->name('room');
+Route::get('/accommodation/room/{accomm_id}', [RoomController::class, 'index'])->name('room');
+
+Route::get('/accommodation/room_detail/{id}', [RoomController::class, 'single_room'])->name('room_detail');
 
 Route::get('/accommodation-types', [AccommodationController::class, 'index'])->name('accommodation_types');
 
 Route::get('/accommodations/{accommtype_id}', [AccommodationController::class, 'accommodation_detail'])->name('accommodation_detail');
-
-
-Route::get('/room/{id}', [RoomController::class, 'single_room'])->name('room_detail');
 
 Route::post('/booking/submit', [BookingController::class, 'cart_submit'])->name('cart_submit');
 

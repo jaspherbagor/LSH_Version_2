@@ -22,7 +22,7 @@
                         <div class="bg"></div>
                     </div>
                     
-                    @foreach($single_room_data->rRoomPhoto as $item)
+                    @foreach($single_room_data->RoomPhotos as $item)
                     <div class="item" style="background-image:url({{ asset('uploads/'.$item->photo) }});">
                         <div class="bg"></div>
                     </div>
