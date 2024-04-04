@@ -69,13 +69,10 @@ Route::get('/subscriber/verify/{email}/{token}', [SubscriberController::class, '
 
 Route::get('/room', [RoomController::class, 'index'])->name('room');
 
-Route::get('/accommodations', [AccommodationController::class, 'index'])->name('accommodation');
+Route::get('/accommodation-types', [AccommodationController::class, 'index'])->name('accommodation_types');
 
-Route::get('/accommodation/hotel', [AccommodationController::class, 'hotel'])->name('accommodation_hotel');
+Route::get('/accommodations/{accomtype_id}', [AccommodationController::class, 'accommodation_detail'])->name('accommodation_detail');
 
-Route::get('/accommodation/boarding-house', [AccommodationController::class, 'boarding_house'])->name('accommodation_boarding_house');
-
-Route::get('/accommodation/apartment', [AccommodationController::class, 'apartment'])->name('accommodation_apartment');
 
 Route::get('/room/{id}', [RoomController::class, 'single_room'])->name('room_detail');
 
@@ -200,6 +197,8 @@ Route::group(['middleware' => ['admin:admin']], function() {
 
 
     Route::get('/admin/accommodation/view/{accomtype_id}', [AdminAccommodationController::class, 'index'])->name('admin_accommodation_view');
+
+    Route::get('/admin/accommodations', [AdminAccommodationController::class, 'accommodation_all'])->name('admin_accommodation_all');
     
     Route::get('/admin/accommodation/add/{accomtype_id}', [AdminAccommodationController::class, 'add'])->name('admin_accommodation_add');
     

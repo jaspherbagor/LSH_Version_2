@@ -93,4 +93,10 @@ class AdminAccommodationController extends Controller
 
         return redirect()->back()->with('success', 'Accommodation is deleted successfully!');
     }
+
+    public function accommodation_all()
+    {
+        $accommodation_all = Accommodation::get();
+        return view('admin.accommodation_all', compact('accommodation_all'));
+    }
 }

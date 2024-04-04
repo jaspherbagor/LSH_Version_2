@@ -15,19 +15,8 @@ class AccommodationController extends Controller
         return view('front.accommodation', compact('accommodation_types'));
     }
 
-    public function hotel()
+    public function accommodation_detail($accomtype_id)
     {
-        $hotels = Room::where('accommodation_name', 'like', '%hotel%')->get();
-        return view('front.accommodation_hotel', compact('hotels'));
-    }
-
-    public function boarding_house()
-    {
-        return view('front.accommodation_boarding_house');
-    }
-
-    public function apartment()
-    {
-        return view('front.accommodation_apartment');
+        
     }
 }
