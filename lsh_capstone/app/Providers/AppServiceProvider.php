@@ -28,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Paginator::useBootstrap();
         $page_data = Page::where('id',1)->first();
         $room_data = Room::get();
         $accommodation_type_data = AccommodationType::get();
