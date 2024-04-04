@@ -89,6 +89,35 @@
 </div>
 @endif
 
+<div class="home-rooms">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h2 class="main-header">All Accommodation Types</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach($accommodation_types as $item)
+            <div class="col-md-4">
+                <div class="inner">
+                    <div class="photo">
+                        <img src="{{ asset('uploads/'.$item->photo) }}" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>
+                            <a href="{{ route('accommodation_detail',$item->id) }}">{{ $item->name }}</a>
+                        </h2>
+                        <div class="button">
+                            <a href="{{ route('accommodation_detail',$item->id) }}" class="btn btn-primary">See Accommodations</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach            
+        </div>
+    </div>
+</div>
+
 
 @if($global_setting_data->home_room_status == 'Show')
 <div class="home-rooms">

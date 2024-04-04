@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Heading *</label>
-                                    <input type="text" class="form-control" name="heading" value={{ old('heading') }}>
+                                    <input type="text" class="form-control" name="heading" value="{{ old('heading') }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Text</label>
@@ -32,11 +32,11 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Button Text</label>
-                                    <input type="text" class="form-control" name="button_text" value={{ old('button_text') }}>
+                                    <input type="text" class="form-control" name="button_text" value="{{ old('button_text') }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Button URL</label>
-                                    <input type="text" class="form-control" name="button_url" value={{ old('button_url') }}>
+                                    <input type="text" class="form-control" name="button_url" value="{{ old('button_url') }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>
