@@ -28,8 +28,8 @@
                                         <td><img src="{{ asset('uploads/'.$row->photo) }}" alt="slide_image" class="w_200"></td>
                                         <td>{{ $row->caption }}</td>
                                         <td class="pt_10 pb_10">
-                                            <a href="{{ route('admin_photo_edit',$row->id) }}" class="btn btn-primary">Edit</a>
-                                            <a href="{{ route('admin_photo_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
+                                            <a href="{{ route('admin_photo_edit',$row->id) }}" class="btn btn-primary mb-1">Edit</a>
+                                            <a href="{{ route('admin_photo_delete',$row->id) }}" class="btn btn-danger mb-1" onClick="return confirm('Are you sure you want to delete this photo?');">Delete</a>
                                         </td>
                                         
                                     </tr>
