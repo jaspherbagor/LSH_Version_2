@@ -93,7 +93,7 @@
     <div class="container">
         <div class="row mb-4">
             <div class="col-md-12">
-                <h2 class="main-header">All Accommodation Types</h2>
+                <h2 class="main-header">Accommodation Types</h2>
             </div>
         </div>
         <div class="row">
@@ -202,7 +202,7 @@
 @if($global_setting_data->home_latest_post_status == 'Show')
 <div class="blog-item">
     <div class="container">
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-md-12">
                 <h2 class="main-header">Latest Posts</h2>
             </div>

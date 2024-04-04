@@ -12,12 +12,14 @@
         @include('front.layout.styles')
         @include('front.layout.scripts')
 
-        {{-- Oswald Google Font Link CDN --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        {{-- Oswald Google Font Link CDN --}}
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
-        {{-- Oswald Google Font CDN --}}
+        {{-- Montserrat Font --}}
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <!-- Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ $global_setting_data->analytic_id }}"></script>
@@ -163,9 +165,11 @@
                                 <li class="nav-item">
                                     <a href="javascript:void;" class="nav-link dropdown-toggle">Accommodations</a>
                                     <ul class="dropdown-menu">
+                                        @foreach($global_accommodation_type_data as $item)
                                         <li class="nav-item">
-                                            <a href="{{ route('accommodation_types') }}" class="nav-link">All Accommodations</a>
+                                            <a href="{{ route('accommodation_detail',$item->id ) }}" class="nav-link">{{ $item->name }}</a>
                                         </li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li class="nav-item">
