@@ -71,7 +71,7 @@ Route::get('/room', [RoomController::class, 'index'])->name('room');
 
 Route::get('/accommodation-types', [AccommodationController::class, 'index'])->name('accommodation_types');
 
-Route::get('/accommodations/{accomtype_id}', [AccommodationController::class, 'accommodation_detail'])->name('accommodation_detail');
+Route::get('/accommodations/{accommtype_id}', [AccommodationController::class, 'accommodation_detail'])->name('accommodation_detail');
 
 
 Route::get('/room/{id}', [RoomController::class, 'single_room'])->name('room_detail');
