@@ -27,7 +27,12 @@
                                 <th>Serial</th>
                                 <th>Photo</th>
                                 <th>Room Info</th>
-                                <th>Price/Night</th>
+                                @php
+                                $room = \App\Models\Room::where('id', session()->get('cart_room_id'))->first();
+                                $accommodation = \App\Models\Accommodation::where('id', $room->accommodation_id)->first();
+                                $accommodation_type = \App\Models\AccommodationType::where('id', $accommodation->accommodation_type_id)->first();
+                                @endphp
+                                <th>Price</th>
                                 <th>Checkin</th>
                                 <th>Checkout</th>
                                 <th>Guests</th>
@@ -84,9 +89,13 @@
                                     <td>{{ $i+1 }}</td>
                                     <td><img src="{{ asset('uploads/'.$room_data->featured_photo) }}"></td>
                                     <td>
-                                        <a href="{{ route('room_detail',$room_data->id) }}" class="room-name">{{ $room_data->name }}</a>
+                                        <a href="{{ route('room_detail',$room_data->id) }}" class="room-name">{{ $room_data->room_name }}</a>
                                     </td>
-                                    <td>₱{{ number_format($room_data->price, 2) }}</td>
+                                    @if($accommodation_type->name != 'Hotel')
+                                    <td>₱{{ number_format($room_data->price, 2) }}/Month</td>
+                                    @else
+                                    <td>₱{{ number_format($room_data->price, 2) }}/Night</td>
+                                    @endif
                                     <td>{{ $arr_cart_checkin_date[$i] }}</td>
                                     <td>{{ $arr_cart_checkout_date[$i] }}</td>
                                     <td>
