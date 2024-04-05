@@ -18,13 +18,15 @@
             @foreach($accommodation_all as $item)
             <div class="col-md-3">
                 <div class="inner">
-                    <div class="photo">
-                        <img src="{{ asset('uploads/'.$item->photo) }}" alt="">
-                    </div>
-                    <div class="text">
-                        <h2><a href="{{ route('room',$item->id) }}">{{ $item->name }}</a></h2>
-                        <div class="button">
-                            <a href="{{ route('room',$item->id) }}" class="btn btn-primary">See Detail</a>
+                    <div class="card accommodation-card">
+                        <div class="photo card-img-top">
+                            <img src="{{ asset('uploads/'.$item->photo) }}" alt="" class="img-fluid">
+                        </div>
+                        <div class="text card-body">
+                            <h2><a href="{{ route('room',$item->id) }}">{{ $item->name }}</a></h2>
+                            <div class="button">
+                                <a href="{{ route('room',$item->id) }}" class="btn btn-primary">See Detail</a>
+                            </div>
                         </div>
                     </div>
                 </div>
