@@ -18,7 +18,7 @@
             @foreach($accommodation_all as $item)
             <div class="col-md-3">
                 <div class="inner">
-                    <div class="card accommodation-card">
+                    <div class="card accommodation-card mb-4">
                         <div class="photo card-img-top">
                             <img src="{{ asset('uploads/'.$item->photo) }}" alt="" class="img-fluid">
                         </div>

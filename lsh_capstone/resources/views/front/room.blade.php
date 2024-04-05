@@ -48,21 +48,23 @@
             @foreach($room_all as $item)
             <div class="col-md-3">
                 <div class="inner">
-                    <div class="photo">
-                        <img src="{{ asset('uploads/'.$item->featured_photo) }}" alt="">
-                    </div>
-                    <div class="text">
-                        <h2><a href="{{ route('room_detail',$item->id) }}">{{ $item->room_name }}</a></h2>
-                        <div class="price">
-                            @if($accommodation_type->name !== 'Hotel')
-                            ₱{{ $item->price }}/month
-                            @else
-                            ₱{{ $item->price }}/night
-                            @endif
-
+                    <div class="card room-card mb-4">
+                        <div class="photo card-img-top">
+                            <img src="{{ asset('uploads/'.$item->featured_photo) }}" alt="" class="img-fluid">
                         </div>
-                        <div class="button">
-                            <a href="{{ route('room_detail',$item->id) }}" class="btn btn-primary">See Detail</a>
+                        <div class="text card-body">
+                            <h2><a href="{{ route('room_detail',$item->id) }}">{{ $item->room_name }}</a></h2>
+                            <div class="price">
+                                @if($accommodation_type->name !== 'Hotel')
+                                ₱{{ $item->price }}/month
+                                @else
+                                ₱{{ $item->price }}/night
+                                @endif
+    
+                            </div>
+                            <div class="button">
+                                <a href="{{ route('room_detail',$item->id) }}" class="btn btn-primary">See Detail</a>
+                            </div>
                         </div>
                     </div>
                 </div>

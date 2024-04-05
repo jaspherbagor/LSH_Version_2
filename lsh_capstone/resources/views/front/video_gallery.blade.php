@@ -18,15 +18,17 @@
             <div class="row">
                 @foreach($video_all as $item)
                 <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="photo-thumb">
-                        <img src="http://img.youtube.com/vi/{{ $item->video_id }}/0.jpg" alt="">
-                        <div class="bg"></div>
-                        <div class="icon">
-                            <a href="http://www.youtube.com/watch?v={{ $item->video_id }}" class="video-button"><i class="fa fa-play"></i></a>
+                    <div class="card video-gallery-card">
+                        <div class="photo-thumb card-img-top">
+                            <img src="http://img.youtube.com/vi/{{ $item->video_id }}/0.jpg" alt="">
+                            <div class="bg"></div>
+                            <div class="icon">
+                                <a href="http://www.youtube.com/watch?v={{ $item->video_id }}" class="video-button"><i class="fa fa-play"></i></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="photo-caption">
-                        {{ $item->caption }}
+                        <div class="photo-caption card-body">
+                            {{ $item->caption }}
+                        </div>
                     </div>
                 </div>
                 @endforeach

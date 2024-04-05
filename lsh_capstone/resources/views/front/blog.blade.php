@@ -18,7 +18,7 @@
             @foreach($post_all as $item)
             <div class="col-md-4">
                 <div class="inner">
-                    <div class="card blog-card">
+                    <div class="card blog-card mb-4">
                         <div class="photo card-photo">
                             <img src="{{ asset('uploads/'.$item->photo) }}" alt="" class="img-fluid">
                         </div>
