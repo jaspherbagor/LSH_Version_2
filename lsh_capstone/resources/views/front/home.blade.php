@@ -100,15 +100,17 @@
             @foreach($accommodation_types as $item)
             <div class="col-md-4">
                 <div class="inner">
-                    <div class="photo">
-                        <img src="{{ asset('uploads/'.$item->photo) }}" alt="">
-                    </div>
-                    <div class="text">
-                        <h2>
-                            <a href="{{ route('accommodation_detail',$item->id) }}">{{ $item->name }}</a>
-                        </h2>
-                        <div class="button">
-                            <a href="{{ route('accommodation_detail',$item->id) }}" class="btn btn-primary">See Accommodations</a>
+                    <div class="card home-card">
+                        <div class="photo card-img-top">
+                            <img src="{{ asset('uploads/'.$item->photo) }}" alt="" class="img-fluid">
+                        </div>
+                        <div class="text card-body">
+                            <h2>
+                                <a href="{{ route('accommodation_detail',$item->id) }}">{{ $item->name }}</a>
+                            </h2>
+                            <div class="button">
+                                <a href="{{ route('accommodation_detail',$item->id) }}" class="btn btn-primary">See Accommodations</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,18 +134,28 @@
             @foreach($room_all as $item)
             <div class="col-md-3">
                 <div class="inner">
-                    <div class="photo">
-                        <img src="{{ asset('uploads/'.$item->featured_photo) }}" alt="">
-                    </div>
-                    <div class="text">
-                        <h2>
-                            <a href="{{ route('room_detail',$item->id) }}">{{ $item->room_name }}</a>
-                        </h2>
-                        <div class="price">
-                            ₱{{ $item->price }} per night
+                    <div class="card home-card">
+                        <div class="photo card-img-top">
+                            <img src="{{ asset('uploads/'.$item->featured_photo) }}" alt="">
                         </div>
-                        <div class="button">
-                            <a href="{{ route('room_detail',$item->id) }}" class="btn btn-primary">See Detail</a>
+                        <div class="text card-body">
+                            <h2>
+                                <a href="{{ route('room_detail',$item->id) }}">{{ $item->room_name }}</a>
+                            </h2>
+                            <div class="price">
+                                @php
+                                    $accommodation = \App\Models\Accommodation::where('id', $item->accommodation_id)->first();
+                                    $accommodation_type = \App\Models\AccommodationType::where('id',$accommodation->accommodation_type_id)->first();
+                                @endphp
+                                @if($accommodation_type->name != 'Hotel')
+                                ₱{{ $item->price }} per month
+                                @else
+                                ₱{{ $item->price }} per night
+                                @endif
+                            </div>
+                            <div class="button">
+                                <a href="{{ route('room_detail',$item->id) }}" class="btn btn-primary">See Detail</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -215,18 +227,20 @@
             @endif
             <div class="col-md-4">
                 <div class="inner">
-                    <div class="photo">
-                        <img src="{{ asset('uploads/'.$item->photo) }}" alt="">
-                    </div>
-                    <div class="text">
-                        <h2><a href="{{ route('single_post',$item->id) }}">{{ $item->heading }}</a></h2>
-                        <div class="short-des">
-                            <p>
-                                {!! $item->short_content !!}
-                            </p>
+                    <div class="card home-card">
+                        <div class="photo card-img-top">
+                            <img src="{{ asset('uploads/'.$item->photo) }}" alt="" class="img-fluid">
                         </div>
-                        <div class="button">
-                            <a href="{{ route('single_post',$item->id) }}" class="btn btn-primary">Read More</a>
+                        <div class="text card-body">
+                            <h2><a href="{{ route('single_post',$item->id) }}">{{ $item->heading }}</a></h2>
+                            <div class="short-des">
+                                <p>
+                                    {!! $item->short_content !!}
+                                </p>
+                            </div>
+                            <div class="button">
+                                <a href="{{ route('single_post',$item->id) }}" class="btn btn-primary">Read More</a>
+                            </div>
                         </div>
                     </div>
                 </div>
