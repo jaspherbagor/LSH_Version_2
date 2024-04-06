@@ -4,6 +4,6 @@
     <title>Email</title>
 </head>
 <body>
-    <p>{!! $body !!}</p>
+    <div>{!! $body !!}</div>
 </body>
 </html>

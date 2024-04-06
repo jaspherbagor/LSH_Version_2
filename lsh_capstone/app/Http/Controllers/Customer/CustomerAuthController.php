@@ -65,11 +65,16 @@ class CustomerAuthController extends Controller
         $obj->save();
 
         // Send email
-        $subject = 'Sign Up Verification';
-        $message = 'Please click on the link below to confirm sign up process:<br>';
+        $subject = 'Confirm Your Sign-Up: Welcome to Labason Safe Haven!';
+        $message = '<p>Dear <strong>'.$request->name. '</strong>, </p>';
+        $message .= '<p>Thank you for joining Labason Safe Haven! Please click the link below to confirm your sign-up:</p> <br>';
         $message .= '<a href="'.$verification_link.'">';
         $message .= $verification_link;
         $message .= '</a>';
+        $message .= '<p>Explore exclusive offers and seamless booking experiences with us. Need help? Contact us at contact@labason.space.</p>';
+        $message .= '<p>Welcome Aboard!</p>';
+        $message .= '<p>Best, </p>';
+        $message .= '<p>Labason Safe Haven Team</p>';
 
         Mail::to($request->email)->send(new Websitemail($subject,$message));
 
