@@ -2987,3 +2987,9 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 .logo {
   height: 60px
 }
+
+.admin-login-card {
+  border-radius: 10px;
+  border: 2px solid rgb(84, 78, 78);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
