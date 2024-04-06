@@ -24,7 +24,10 @@
                     <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
                         <div class="card card-primary border-box forgot-password-card">
                             <div class="card-header card-header-auth">
-                                <h4 class="text-center">Reset Password</h4>
+                                <div class="text-center">
+                                    <img src="{{ asset('uploads/logo.png') }}" alt="" class="logo">
+                                </div>
+                                <h4 class="text-center mt-3">Admin Forgot Password</h4>
                             </div>
                             <div class="card-body card-body-auth">
                                 <form method="POST" action="{{ route('admin_forget_password_submit') }}">
@@ -33,7 +36,7 @@
                                         <div class="alert alert-danger">{{ session()->get('error') }}</div>
                                     @endif
                                     <div class="form-group">
-                                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email Address" value="" autofocus>
+                                        <input type="email" class="form-control @error('email') is-invalid @enderror email-input" name="email" placeholder="Email Address" value="" autofocus>
                                         @error('email')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror

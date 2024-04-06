@@ -2988,8 +2988,13 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
   height: 60px
 }
 
-.admin-login-card, .forgot-password-card {
+.admin-login-card, .forgot-password-card, .reset-password-card {
   border-radius: 10px;
   border: 2px solid rgb(84, 78, 78);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.email-input, .password-input {
+  border-radius: 10px !important;
+  border: 2px solid rgb(8, 8, 8);
 }

@@ -28,7 +28,7 @@
                                 <div class="text-center">
                                     <img src="{{ asset('uploads/logo.png') }}" alt="" class="logo">
                                 </div>
-                                <h4 class="text-center">Admin Login</h4>
+                                <h4 class="text-center mt-3">Admin Login</h4>
                             </div>
                             <div class="card-body card-body-auth">
                                 @if(session()->get('error'))
@@ -40,13 +40,13 @@
                                 <form method="POST" action="{{ route('admin_login_submit') }}">
                                     @csrf
                                     <div class="form-group">
-                                        <input type="email" class="form-control @error('email') is-invalid   @enderror" name="email" placeholder="Email Address" value="{{ old('email') }}" autofocus>
+                                        <input type="email" class="form-control @error('email') is-invalid   @enderror email-input" name="email" placeholder="Email Address" value="{{ old('email') }}" autofocus>
                                         @error('email')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control @error('password') is-invalid   @enderror" name="password"  placeholder="Password">
+                                        <input type="password" class="form-control @error('password') is-invalid   @enderror password-input" name="password"  placeholder="Password">
                                         @error('password')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
