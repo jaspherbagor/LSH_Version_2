@@ -1314,7 +1314,15 @@ select {
 	background-position: center;
 }
 
-.login-container {
+.register-body-container {
+	min-height: 100vh;
+	background-image: url('../../uploads/login.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.login-container, .register-container {
 	border-radius: 10px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	border: 1px solid rgb(142, 134, 134);
@@ -1325,3 +1333,4 @@ select {
 	border-radius: 10px;
 	border: 2px solid rgb(27, 25, 25)
 }
+

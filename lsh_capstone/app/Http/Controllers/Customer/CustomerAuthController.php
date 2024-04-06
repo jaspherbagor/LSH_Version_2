@@ -48,7 +48,7 @@ class CustomerAuthController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:customers',
             'password' => 'required',
-            'retype_password' =>'required|same:password'
+            'confirm_password' =>'required|same:password'
         ]);
 
 
