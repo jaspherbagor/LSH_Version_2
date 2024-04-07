@@ -102,7 +102,7 @@
                                 <a href="{{ route('cart') }}">
                                     {{ $global_page_data->cart_heading }}
                                     @if(session()->has('cart_room_id'))
-                                    <sup class="text-success">{{ count(session()->get('cart_room_id')) }}</sup> 
+                                    <sup class="text-danger">{{ count(session()->get('cart_room_id')) }}</sup> 
                                     @endif
                                 </a>
                             </li>
