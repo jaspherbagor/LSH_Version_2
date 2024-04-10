@@ -26,8 +26,12 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $row->name }}</td>
                                         <td class="pt_10 pb_10">
-                                            <a href="{{ route('admin_amenity_edit',$row->id) }}" class="btn btn-primary mb-md-0 mb-1">Edit</a>
-                                            <a href="{{ route('admin_amenity_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
+                                            <a href="{{ route('admin_amenity_edit',$row->id) }}" class="btn btn-primary mb-md-0 mb-1" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="{{ route('admin_amenity_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');"  data-toggle="tooltip" data-placement="top" title="Delete">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </a>
                                         </td>
                                         
                                     </tr>
