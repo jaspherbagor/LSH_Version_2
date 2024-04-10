@@ -28,9 +28,15 @@
                                         <td>{{ $row->name }}</td>
                                         <td><img src="{{ asset('uploads/'.$row->photo) }}" alt="accommodation_type_image" class="w_200"></td>
                                         <td class="pt_10 pb_10">
-                                            <a href="{{ route('admin_accommodation_type_edit',$row->id) }}" class="btn btn-primary">Edit</a>
-                                            <a href="{{ route('admin_accommodation_view',$row->id) }}" class="btn btn-success">Accommodations</a>
-                                            <a href="{{ route('admin_accommodation_type_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete {{ $row->name }}?');">Delete</a>
+                                            <a href="{{ route('admin_accommodation_type_edit',$row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="{{ route('admin_accommodation_view',$row->id) }}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Accommodations">
+                                                <i class="fa fa-building-o" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="{{ route('admin_accommodation_type_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete {{ $row->name }}?');" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </a>
                                         </td>
                                         
                                     </tr>
