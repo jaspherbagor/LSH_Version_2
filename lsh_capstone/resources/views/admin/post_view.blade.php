@@ -28,8 +28,12 @@
                                         <td><img src="{{ asset('uploads/'.$row->photo) }}" alt="slide_image" class="w_200"></td>
                                         <td>{{ $row->heading }}</td>
                                         <td class="pt_10 pb_10">
-                                            <a href="{{ route('admin_post_edit',$row->id) }}" class="btn btn-primary mb-1">Edit</a>
-                                            <a href="{{ route('admin_post_delete',$row->id) }}" class="btn btn-danger mb-1" onClick="return confirm('Are you sure you want to delete {{ $row->heading }}?');">Delete</a>
+                                            <a href="{{ route('admin_post_edit',$row->id) }}" class="btn btn-primary mb-1" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="{{ route('admin_post_delete',$row->id) }}" class="btn btn-danger mb-1" onClick="return confirm('Are you sure you want to delete {{ $row->heading }}?');" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </a>
                                         </td>
                                         
                                     </tr>
