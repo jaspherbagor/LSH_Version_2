@@ -32,8 +32,12 @@
                                             {{ $row->heading }}
                                         </td>
                                         <td class="pt_10 pb_10">
-                                            <a href="{{ route('admin_feature_edit',$row->id) }}" class="btn btn-primary">Edit</a>
-                                            <a href="{{ route('admin_feature_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
+                                            <a href="{{ route('admin_feature_edit',$row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="{{ route('admin_feature_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </a>
                                         </td>
                                         
                                     </tr>
