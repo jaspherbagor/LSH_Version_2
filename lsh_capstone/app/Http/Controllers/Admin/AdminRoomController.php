@@ -14,9 +14,10 @@ class AdminRoomController extends Controller
 {
     public function index($accom_id)
     {
+        $accommodation_type = AccommodationType::where('id', $accom_id)->first();
         $accommodation = Accommodation::where('id', $accom_id)->first();
         $rooms = Room::where('accommodation_id', $accom_id)->get();
-        return view('admin.room_view', compact('rooms', 'accommodation'));
+        return view('admin.room_view', compact('rooms', 'accommodation', 'accommodation_type'));
     }
 
     public function add($accom_id)
@@ -103,12 +104,12 @@ class AdminRoomController extends Controller
             }
         }
 
-        // $request->validate([
-        //     'name' => 'required',
-        //     'description' => 'required',
-        //     'price' => 'required',
-        //     'total_rooms' => 'required'
-        // ]);
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'total_rooms' => 'required'
+        ]);
 
         if($request->hasFile('featured_photo')) {
             $request->validate([

@@ -31,13 +31,25 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td><img src="{{ asset('uploads/'.$row->featured_photo) }}" alt="slide_image" class="w_200"></td>
                                         <td>{{ $accommodation->name }}</td>
-                                        <td>{{ $row->name }}</td>
+                                        <td>{{ $row->room_name }}</td>
+                                        @if($accommodation_type->name != 'Hotel')
+                                        <td>₱{{ $row->price }}/month</td>
+                                        @else
                                         <td>₱{{ $row->price }}/night</td>
+                                        @endif
                                         <td class="pt_10 pb_10">
-                                            <button class="btn btn-warning mb-md-0 mb-1" data-toggle="modal" data-target="#exampleModal{{ $i }}">Detail</button>
-                                            <a href="{{ route('admin_room_gallery',$row->id) }}" class="btn btn-success mb-md-0 mb-1">Gallery</a>
-                                            <a href="{{ route('admin_room_edit',$row->id) }}" class="btn btn-primary mb-md-0 mb-1">Edit</a>
-                                            <a href="{{ route('admin_room_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
+                                            <button class="btn btn-warning mb-1" data-toggle="modal" data-target="#exampleModal{{ $i }}" data-toggle="tooltip" data-placement="top" title="Detail">
+                                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                            </button>
+                                            <a href="{{ route('admin_room_gallery',$row->id) }}" class="btn btn-success mb-1" data-toggle="tooltip" data-placement="top" title="Gallery">
+                                                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="{{ route('admin_room_edit',$row->id) }}" class="btn btn-primary mb-1" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="{{ route('admin_room_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </a>
                                         </td>
                                         <div class="modal fade" id="exampleModal{{ $i }}" tabindex="-1" aria-hidden="true">
                                             <div class="modal-dialog modal-lg">
@@ -59,7 +71,7 @@
                                                         </div>
                                                         <div class="form-group row bdb1 pt_10 mb_0">
                                                             <div class="col-md-4"><label class="form-label">Name</label></div>
-                                                            <div class="col-md-8">{{ $row->name }}</div>
+                                                            <div class="col-md-8">{{ $row->room_name }}</div>
                                                         </div>
                                                         <div class="form-group row bdb1 pt_10 mb_0">
                                                             <div class="col-md-4">
@@ -69,7 +81,11 @@
                                                         </div>
                                                         <div class="form-group row bdb1 pt_10 mb_0">
                                                             <div class="col-md-4">
+                                                                @if($accommodation_type->name != 'Hotel')
+                                                                <label class="form-label">Price (per month)</label>
+                                                                @else
                                                                 <label class="form-label">Price (per night)</label>
+                                                                @endif
                                                             </div>
                                                             <div class="col-md-8">₱{{ $row->price }}</div>
                                                         </div>
