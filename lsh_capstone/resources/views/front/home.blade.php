@@ -34,7 +34,10 @@
                         <select name="room_id" class="form-select">
                             <option value="">Select Accommodation</option>
                             @foreach($room_all as $item)
-                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            @php
+                            $accommodation = \App\Models\Accommodation::where('id', $item->accommodation_id)->first();
+                            @endphp
+                            <option value="{{ $item->id }}">{{ $item->room_name }} - (<span class="text-success">{{ $accommodation->name }}</span>)  </option>
                             @endforeach
                         </select>
                     </div>
