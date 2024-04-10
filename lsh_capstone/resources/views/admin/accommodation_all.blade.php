@@ -27,9 +27,15 @@
                                         <td><img src="{{ asset('uploads/'.$row->photo) }}" alt="accommodation_type_image" class="w_200"></td>
                                         <td>{{ $row->address }}</td>
                                         <td class="pt_10 pb_10">
-                                            <a href="{{ route('admin_accommodation_edit',$row->id) }}" class="btn btn-primary mb-1">Edit</a>
-                                            <a href="{{ route('admin_room_view',$row->id) }}" class="btn btn-success mb-1">See Rooms</a>
-                                            <a href="{{ route('admin_accommodation_delete',$row->id) }}" class="btn btn-danger mb-1" onClick="return confirm('Are you sure you want to delete {{ $row->name }}?');">Delete</a>
+                                            <a href="{{ route('admin_accommodation_edit',$row->id) }}" class="btn btn-primary mb-1" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="{{ route('admin_room_view',$row->id) }}" class="btn btn-success mb-1" data-toggle="tooltip" data-placement="top" title="See Rooms">
+                                                <i class="fa fa-bed" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="{{ route('admin_accommodation_delete',$row->id) }}" class="btn btn-danger mb-1" onClick="return confirm('Are you sure you want to delete {{ $row->name }}?');" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </a>
                                         </td>
                                         
                                     </tr>

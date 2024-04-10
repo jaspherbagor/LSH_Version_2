@@ -35,7 +35,7 @@
                                                 <i class="fa fa-pencil" aria-hidden="true"></i>
                                             </a>
                                             <a href="{{ route('admin_room_view',$row->id) }}" class="btn btn-success mb-1" data-toggle="tooltip" data-placement="top" title="See Rooms">
-                                                <i class="fa fa-home" aria-hidden="true"></i>
+                                                <i class="fa fa-bed" aria-hidden="true"></i>
                                             </a>
                                             <a href="{{ route('admin_accommodation_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure you want to delete {{ $row->name }}?');" data-toggle="tooltip" data-placement="top" title="Delete">
                                                 <i class="fa fa-trash-o" aria-hidden="true"></i>
