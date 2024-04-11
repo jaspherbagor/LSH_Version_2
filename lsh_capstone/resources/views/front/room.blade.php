@@ -76,5 +76,9 @@
             </div>
         </div>
     </div>
+    
+    <div class="container bg-danger">
+        <h2>This is a rate</h2>
+    </div>
 </div>
 @endsection
